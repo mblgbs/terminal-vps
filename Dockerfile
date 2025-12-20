@@ -16,5 +16,12 @@ USER user
 # Expose the web-based terminal port
 EXPOSE 4200
 
-# Start shellinabox
-CMD ["/usr/bin/shellinaboxd", "-t", "-s", "/: LOGIN"]
+# Set working directory and install dependencies
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+# Start the application
+CMD ["npm", "run", "start"]
