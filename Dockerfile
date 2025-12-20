@@ -10,6 +10,9 @@ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # Create a non-root user for security
 RUN useradd -m -s /bin/bash user
 
+# Switch to non-root user
+USER user
+
 # Expose the web-based terminal port
 EXPOSE 4200
 
