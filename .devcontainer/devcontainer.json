@@ -1,6 +1,7 @@
 {
-  "name": "Terminal VPS",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "postCreateCommand": "chmod +x /workspace/terminal-vps/24H/7J/keepalive.sh && nohup /workspace/terminal-vps/24H/7J/keepalive.sh > /dev/null 2>&1 &",
-  "features": {}
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    }
+  }
 }
